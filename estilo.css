@@ -7,12 +7,16 @@
     font-family: "";
     src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 }
+body{
+    color:black;
+    line-height:1.6;
+}
 /*MENU, queda igual en todos las paginas*/
 .menu{
     list-style: none;
     padding: 20px;
-    background-color: white;
-    border: 2px solid #55F;
+    background-color:white;
+    border:2xp solid #55F;
     text-align: center;
     margin-right: 5px;
     border-radius: 20px;
@@ -34,11 +38,6 @@
 .menu a:hover{
     color: #55F;
     font-weight: bold;
-}
-.menu .botoncono:hover{
-    color: rgb(37, 228, 37);
-    font-weight: bold;
-    
 }
 .menu .imgmenu{
     max-width: 100%;
@@ -63,19 +62,55 @@ h1{
 /*FIN ELEMENTOS INDEX.HTML*/
 
 /*INICIO ELEMENTOS SOBRE.NOSOTROS.HTML*/
-.IyD{
-    display:flex;
+/*grilla SOBRE NOSOTROS*/
+body{
+    margin:20px;
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: 
+    "header header"
+    "titulo titulo"
+    "foto foto"
+    "ladoi ladod"
+    "footer footer";
+    margin:0%;
 }
-.ladoI {
-    flex:1;
-    padding:50px;
-    text-align:left;
+header{
+    grid-area:header;
+}
+.titulo{
+    grid-area:titulo;
+}
+.fotoprincipal{
+    grid-area: foto;
+}
+.ladoI{
+    grid-area:ladoi;
 }
 .ladoD{
-    flex:1;
-    padding:50px;
-    text-align:right;
+    grid-area:ladod;
 }
+footer{
+    grid-area: footer;
+}
+
+/*vista mobile*/
+@media screen and (min-width: 50px) and (max-width: 768px) {
+    body {
+        margin: 10px; /* Adjust margin for smaller screens */
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+        grid-template-rows: auto auto auto auto auto; /* Keep the same number of rows */
+        grid-template-areas: 
+        "header"
+        "titulo"
+        "foto"
+        "ladoi"
+        "ladod"
+        "footer";
+    }
+}
+
 /*FIN ELEMENTOS SOBRE.NOSOTROS*/
 
 /*INICIO ELEMENTOS CONO.ECOLOGICO.HTML*/
@@ -116,24 +151,37 @@ footer{
     border: bold 2px #55F;
     border-radius: 5px ;
 }
-
 /*fin grilla*/
+/*vista mobile*/
+@media screen and (min-width: 50px) and (max-width: 768px) {
+    body {
+        margin: 10px auto; /* Adjust margin for smaller screens */
+        grid-template-columns: auto; /* Single column layout for smaller screens */
+        grid-template-rows: auto auto auto auto auto; /* Keep the same number of rows */
+        grid-template-areas:
+            "header"
+            "titulocono"
+            "foto1"
+            "texto1"
+            "ventajas"
+            "video1"
+            "footer";
+    }
+}
+
 .fototexto1{
-    display: flex;
     height:500px;
     width:300px;
-    margin-left: ;
+    margin-left: 0px;
     justify-content: center;
 }
 
 .fotocono1{
-    text-align: left;
     margin:50px;
-    flex: 1;
     padding:20px;
+    justify-content: center;
 }
 .textocono1{
-    flex:2;
     padding:20px;
     margin-top:50px;
 }
